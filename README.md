@@ -15,6 +15,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ![screenshot-2](screenshot-2.png)
 
+![screenshot-3](screenshot-3.png)
+
 * [Angular 9/8 Tutorial & Example — Upload Files with FormData, HttpClient, RxJS, and Material ProgressBar](https://www.ahmedbouchefra.com/angular/angular-9-8-tutorial-example-upload-files-with-formdata-httpclient-rxjs-and-material-progressbar/)
 * https://long2know.com/2017/03/angular-file-upload-to-webapi/
 * https://stackoverflow.com/questions/47936183/angular-file-upload
