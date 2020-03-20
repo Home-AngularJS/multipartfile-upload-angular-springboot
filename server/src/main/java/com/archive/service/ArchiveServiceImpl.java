@@ -1,5 +1,6 @@
 package com.archive.service;
 
+import com.archive.dao.DocumentDao;
 import com.archive.data.Document;
 import com.archive.data.DocumentMetadata;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class ArchiveServiceImpl implements ArchiveService, Serializable {
     private static final long serialVersionUID = 8119784722798361327L;
 
     @Autowired
-    private com.archive.dao.DocumentDao DocumentDao;
+    private DocumentDao documentDao;
 
     @Override
     public DocumentMetadata save(Document document) {
@@ -38,11 +39,11 @@ public class ArchiveServiceImpl implements ArchiveService, Serializable {
         }
     }
 
-    public com.archive.dao.DocumentDao getDocumentDao() {
-        return DocumentDao;
+    public DocumentDao getDocumentDao() {
+        return documentDao;
     }
 
-    public void setDocumentDao(com.archive.dao.DocumentDao documentDao) {
-        DocumentDao = documentDao;
+    public void setDocumentDao(DocumentDao documentDao) {
+        documentDao = documentDao;
     }
 }
