@@ -1,4 +1,4 @@
-package com.s3.fileupload;
+package com.archive;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

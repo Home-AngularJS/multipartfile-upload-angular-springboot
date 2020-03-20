@@ -1,6 +1,7 @@
-package com.s3.fileupload.service;
+package com.archive.service;
 
-import com.s3.fileupload.dao.IDocumentDao;
+import com.archive.data.Document;
+import com.archive.data.DocumentMetadata;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,12 +10,12 @@ import java.util.Date;
 import java.util.List;
 
 @Service("archiveService")
-public class ArchiveService implements IArchiveService, Serializable {
+public class ArchiveServiceImpl implements ArchiveService, Serializable {
 
     private static final long serialVersionUID = 8119784722798361327L;
 
     @Autowired
-    private IDocumentDao DocumentDao;
+    private com.archive.dao.DocumentDao DocumentDao;
 
     @Override
     public DocumentMetadata save(Document document) {
@@ -37,11 +38,11 @@ public class ArchiveService implements IArchiveService, Serializable {
         }
     }
 
-    public IDocumentDao getDocumentDao() {
+    public com.archive.dao.DocumentDao getDocumentDao() {
         return DocumentDao;
     }
 
-    public void setDocumentDao(IDocumentDao documentDao) {
+    public void setDocumentDao(com.archive.dao.DocumentDao documentDao) {
         DocumentDao = documentDao;
     }
 }

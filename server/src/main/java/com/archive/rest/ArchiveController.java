@@ -1,7 +1,7 @@
-package com.s3.fileupload.rest;
+package com.archive.rest;
 
-import com.s3.fileupload.service.Document;
-import com.s3.fileupload.service.IArchiveService;
+import com.archive.data.Document;
+import com.archive.service.ArchiveService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,12 +14,12 @@ import java.util.Date;
 import java.util.UUID;
 
 @Controller
-public class S3BucketController {
+public class ArchiveController {
 
-    private static final Logger LOG = Logger.getLogger(S3BucketController.class);
+    private static final Logger logger = Logger.getLogger(ArchiveController.class);
 
     @Autowired
-    IArchiveService archiveService;
+    ArchiveService archiveService;
 
     @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
     public ResponseEntity<?> uploadFile(@RequestParam(value="file") MultipartFile file) {
@@ -28,10 +28,10 @@ public class S3BucketController {
             archiveService.save(document);
             return new ResponseEntity<>(document.getMetadata(), HttpStatus.OK);
         } catch (RuntimeException re) {
-            LOG.error("Error while uploading.", re);
+            logger.error("Error while uploading.", re);
             throw re;
         } catch (Exception e) {
-            LOG.error("Error while uploading.", e);
+            logger.error("Error while uploading.", e);
             throw new RuntimeException(e);
         }
     }

@@ -1,4 +1,4 @@
-package com.s3.fileupload.config;
+package com.archive.config;
 
 import java.io.IOException;
 import javax.servlet.Filter;

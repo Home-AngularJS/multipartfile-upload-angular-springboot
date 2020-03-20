@@ -1,4 +1,4 @@
-package com.s3.fileupload.service;
+package com.archive.data;
 
 import java.io.Serializable;
 import java.util.Date;
