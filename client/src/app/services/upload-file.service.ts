@@ -7,18 +7,17 @@ import { Observable } from 'rxjs';
 })
 export class UploadFileService {
 
-  constructor(private https: HttpClient) { }
+  constructor(private https: HttpClient) {}
 
   pushFileToStorage(file: File): Observable<HttpEvent<{}>> {
     const data: FormData = new FormData();
-
     data.append('file', file);
 
-    const newRequest = new HttpRequest('POST', 'http://localhost:8080/uploadFile', data, {
+    const request = new HttpRequest('POST', 'http://localhost:8080/uploadFile', data, {
       reportProgress: true,
       responseType: 'text'
     });
 
-    return this.https.request(newRequest);
+    return this.https.request(request);
   }
 }
